@@ -11,14 +11,14 @@ int is_palindrome(listint_t **head)
 {
 	int is_palindrome = 1;
 
-	if (*head == NULL)
-		return (1);
-
 	listint_t *slow = *head;
 	listint_t *fast = *head;
 	listint_t *prev = NULL;
 	listint_t *temp;
 
+	if (*head == NULL)
+                return (1);
+	
 	while (fast != NULL && fast->next != NULL)
 	{
 		fast = fast->next->next;
