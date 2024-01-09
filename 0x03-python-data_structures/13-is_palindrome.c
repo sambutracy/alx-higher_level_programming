@@ -9,6 +9,8 @@
  */
 int is_palindrome(listint_t **head)
 {
+	int is_palindrome = 1;
+
 	if (*head == NULL)
 		return (1);
 
@@ -30,14 +32,29 @@ int is_palindrome(listint_t **head)
 	if (fast != NULL)
 		slow = slow->next;
 
-	while (slow != NULL)
+	while (prev != NULL && slow != NULL)
 	{
 		if (prev->n != slow->n)
-			return (0);
+		{
+			is_palindrome = 0;
+			break;
+		}
 
 		prev = prev->next;
 		slow = slow->next;
 	}
+	prev = NULL;
+	slow = *head;
 
-	return (1);
+	while (slow != NULL)
+	{
+		temp = slow->next;
+		slow->next = prev;
+		prev = slow;
+		slow = temp;
+	}
+
+	*head = prev; /* Update the head pointer */
+
+	return is_palindrome;
 }
