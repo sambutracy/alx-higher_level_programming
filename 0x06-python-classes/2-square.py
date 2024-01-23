@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+""" class representing a square"""
+
+
 class Square:
     """Square class represents a square."""
-
-
     def __init__(self, size=0):
         """Initializes a new Square instance."""
         if not isinstance(size, int):
