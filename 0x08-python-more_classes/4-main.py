@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from typing import Type
 Rectangle = __import__('4-rectangle').Rectangle
 
 my_rectangle = Rectangle(2, 4)
