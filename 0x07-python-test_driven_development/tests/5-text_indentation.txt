@@ -1,0 +1,40 @@
+# Python Test Cases
+All test files should be placed inside a folder named `tests` and have a text file extension (`.txt`). Ensure that each file ends with a newline character.
+
+## Testing Module: `text_printer.py`
+This module defines a function to print text with two new lines after each '.', '?', and ':'.
+
+### `text_indentation(text)`
+Prints text with two new lines after each '.', '?', and ':'.
+
+#### Parameters
+- `text`: The text to print.
+
+#### Returns
+- None
+
+#### Raises
+- `TypeError`: If `text` is not a string.
+
+### Examples
+```python
+>>> text_indentation("This is a sample text. It has multiple sentences. Each separated by a period.")
+This is a sample text.
+It has multiple sentences.
+Each separated by a period.
+
+>>> text_indentation("A question? Will it be properly formatted? We'll see.")
+A question?
+Will it be properly formatted?
+We'll see.
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation(["a", "list"])
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
