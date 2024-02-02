@@ -1,0 +1,58 @@
+# Python Test Cases
+All test files should be placed inside a folder named `tests` and have a text file extension (`.txt`). Ensure that each file ends with a newline character.
+
+## Testing Module: `name_printer.py`
+This module defines a function to print names.
+
+### `say_my_name(first_name, last_name="")`
+Prints the provided first name and last name.
+
+#### Parameters
+- `first_name`: The first name to be printed.
+- `last_name`: The last name to be printed. (Default is an empty string)
+
+#### Returns
+- None
+
+#### Raises
+- `TypeError`: If `first_name` is not a string.
+- `TypeError`: If `last_name` is not a string.
+
+### Examples
+```python
+>>> say_my_name("John", "Doe")
+My name is John Doe
+>>> say_my_name("Alice")
+My name is Alice
+
+>>> say_my_name(123, "Smith")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("Bob", 456)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> say_my_name("Charlie", None)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> say_my_name(789)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+>>> say_my_name("David", last_name="Miller")
+My name is David Miller
+
+>>> say_my_name("Eve", last_name=123)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> say_my_name("Frank", "White", extra_arg="Extra")
+Traceback (most recent call last):
+TypeError: say_my_name() got an unexpected keyword argument 'extra_arg'
+
