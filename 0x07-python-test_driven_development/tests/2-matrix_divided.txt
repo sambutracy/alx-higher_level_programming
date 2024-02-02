@@ -1,16 +1,41 @@
-#!/usr/bin/python3
-"""
-Test cases for the matrix_divided function.
-"""
+# Python Test Cases
+All test files should be placed inside a folder named `tests` and have a text file extension (`.txt`). Ensure that each file ends with a newline character.
 
-from __import__('2-matrix_divided') import matrix_divided
+## Testing Module: `matrix_operations.py`
+This module provides a function for dividing all elements of a matrix.
 
-# Test cases
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6]
-]
-print(matrix_divided(matrix, 3))  # Output: [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-print(matrix)  # Output: [[1, 2, 3], [4, 5, 6]]
-print(result)  # Output: [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-# Additional test cases can be added to cover all possible scenarios
+### `matrix_divided(matrix, div)`
+Divides all elements of a matrix by a given number.
+
+#### Parameters
+- `matrix`: a list of lists of integers or floats
+- `div`: a number (integer or float) to divide the elements of the matrix by
+
+#### Returns
+- A new matrix with elements rounded to 2 decimal places.
+
+#### Raises
+- `TypeError`: If matrix is not a list of lists of integers or floats, if each row of the matrix is not of the same size, or if div is not a number (integer or float).
+- `ZeroDivisionError`: If div is equal to 0.
+
+### Examples
+```python
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 2)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
+
+>>> matrix_divided([[1, 2, 'three'], [4, 5, 6], [7, 8, 9]], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8]], 2)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 'two')
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
