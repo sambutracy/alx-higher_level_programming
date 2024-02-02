@@ -1,0 +1,49 @@
+# Python Test Cases
+All test files should be placed inside a folder named `tests` and have a text file extension (`.txt`). Ensure that each file ends with a newline character.
+
+## Testing Module: `matrix_multiplier.py`
+This module defines a function to multiply two matrices.
+
+### `matrix_mul(m_a, m_b)`
+Multiplies two matrices.
+
+#### Parameters
+- `m_a`: The first matrix (list of lists of ints/floats).
+- `m_b`: The second matrix (list of lists of ints/floats).
+
+#### Returns
+- A new matrix representing the multiplication of `m_a` by `m_b`.
+
+#### Raises
+- `TypeError`: If either `m_a` or `m_b` is not a list of lists of ints/floats.
+- `TypeError`: If either `m_a` or `m_b` is empty.
+- `TypeError`: If either `m_a` or `m_b` has different-sized rows.
+- `TypeError`: If `m_a` or `m_b` contains elements that are not integers or floats.
+- `ValueError`: If `m_a` and `m_b` cannot be multiplied.
+
+### Examples
+```python
+>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[7, 8], [9, 10], [11, 12]])
+[[58, 64], [139, 154]]
+
+>>> matrix_mul([[2, 3], [4, 5]], [[6, 7], [8, 9]])
+[[36, 41], [64, 73]]
+>>> matrix_mul([], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+>>> matrix_mul([[1, 2], [3, 4]], "not_a_matrix")
+Traceback (most recent call last):
+TypeError: m_b must be a list
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7]])
+Traceback (most recent call last):
+TypeError: each row of m_b must should be of the same size
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8, 9]])
+Traceback (most recent call last):
+TypeError: each row of m_b must should be of the same size
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 'eight']])
+Traceback (most recent call last):
+TypeError: m_b should contain only integers or floats
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+Traceback (most recent call last):
+ValueError: m_a and m_b can't be multiplied
+
