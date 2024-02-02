@@ -1,0 +1,47 @@
+# Python Test Cases
+All test files should be placed inside a folder named `tests` and have a text file extension (`.txt`). Ensure that each file ends with a newline character.
+
+## Testing Module: `square_printer.py`
+This module defines a function to print a square area with '#' characters.
+
+### `print_square(size)`
+Prints a square area with '#' characters.
+
+#### Parameters
+- `size`: The size of the square.
+
+#### Returns
+- None
+
+#### Raises
+- `TypeError`: If `size` is not an integer.
+- `ValueError`: If `size` is less than 0.
+- `TypeError`: If `size` is a float and less than 0.
+
+### Examples
+```python
+>>> print_square(3)
+###
+###
+###
+
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+>>> print_square("four")
+Traceback (most recent call last):
+TypeError: size must be an integer
+>>> print_square(-2)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+>>> print_square(4.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
+
