@@ -1,33 +1,82 @@
-#!/usr/bin/python3
+# File: tests/test_add_integer.txt
+
 """
-Test cases for the add_integer function.
-
-Test cases:
-- add_integer(1, 2): should return 3
-- add_integer(100, -2): should return 98
-- add_integer(2): should return 100
-- add_integer(100.3, -2): should return 98
-
-Exception cases:
-- add_integer(4, "School"): should raise a TypeError with the message "a must be an integer or b must be an integer"
-- add_integer(None): should raise a TypeError with the message "a must be an integer or b must be an integer"
+Testing for add_integer function
 """
 
-from __import__('0-add_integer') import add_integer
+def test_add_integer():
+    """
+    Testing add_integer function.
+    """
+    add_integer = __import__('0-add_integer').add_integer
 
-# Test cases
-print(add_integer(1, 2))           # Output: 3
-print(add_integer(100, -2))         # Output: 98
-print(add_integer(2))               # Output: 100
-print(add_integer(100.3, -2))        # Output: 98
+    # Test integer addition
+    assert add_integer(2, 3) == 5
 
-# Exception cases
-try:
-    print(add_integer(4, "School"))
-except Exception as e:
-    print(e)  # Output: a must be an integer or b must be an integer
+    # Test negative integer addition
+    assert add_integer(2, -3) == -1
 
-try:
-    print(add_integer(None))
-except Exception as e:
-    print(e)  # Output: a must be an integer or b must be an integer
+    # Test float addition (automatically casted to int)
+    assert add_integer(2.0, 3.0) == 5
+
+    # Test float addition with casting
+    assert add_integer(2.9, 0.2) == 2
+
+    # Test combination of float and integer
+    assert add_integer(2.3, -3) == -1
+
+    # Test default second argument
+    assert add_integer(2) == 100
+
+    # Test non-integer and non-float cases
+    try:
+        add_integer("hello", 3)
+    except TypeError as e:
+        assert str(e) == "a must be an integer"
+
+    try:
+        add_integer(2, "hello")
+    except TypeError as e:
+        assert str(e) == "b must be an integer"
+
+    try:
+        add_integer(None)
+    except TypeError as e:
+        assert str(e) == "a must be an integer"
+
+    try:
+        add_integer(2.3, None)
+    except TypeError as e:
+        assert str(e) == "b must be an integer"
+
+    try:
+        add_integer("hello", "there")
+    except TypeError as e:
+        assert str(e) == "a must be an integer"
+
+    # Test infinity cases
+    try:
+        add_integer(float('inf'))
+    except OverflowError as e:
+        assert str(e) == "cannot convert float infinity to integer"
+
+    try:
+        add_integer(2, float('inf'))
+    except OverflowError as e:
+        assert str(e) == "cannot convert float infinity to integer"
+
+    # Test NaN cases
+    try:
+        add_integer(float('nan'))
+    except ValueError as e:
+        assert str(e) == "cannot convert float NaN to integer"
+
+    try:
+        add_integer(2, float('nan'))
+    except ValueError as e:
+        assert str(e) == "cannot convert float NaN to integer"
+
+if __name__ == "__main__":
+    # Execute the test using the specified command
+    import doctest
+    doctest.testfile("./tests/test_add_integer.txt")
