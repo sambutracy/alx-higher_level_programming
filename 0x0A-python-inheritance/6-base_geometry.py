@@ -2,7 +2,7 @@
 """the class raises error when it's empty"""
 
 
-class BaseGeometry:
+class BaseGeometry(object):
     """Base class for geometry."""
     
     def area(self):
