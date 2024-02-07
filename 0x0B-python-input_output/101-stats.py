@@ -33,3 +33,5 @@ def main():
     except KeyboardInterrupt:
         print_stats(total_size, status_codes)
         raise
+    except BrokenPipeError:
+        pass
