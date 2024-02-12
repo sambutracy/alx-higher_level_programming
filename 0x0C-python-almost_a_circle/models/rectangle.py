@@ -126,7 +126,7 @@ class Rectangle(Base):
         """
         print("\n" * self.y, end="")
         for _ in range(self.height):
-            print(" " * self.x +  "#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """
