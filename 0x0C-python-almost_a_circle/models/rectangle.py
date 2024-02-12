@@ -124,8 +124,9 @@ class Rectangle(Base):
         """
         Prints the Rectangle instance with '#' characters.
         """
+        print("\n" * self.y, end="")
         for _ in range(self.height):
-            print("#" * self.width)
+            print(" " * self.x +  "#" * self.width)
 
     def __str__(self):
         """
@@ -136,3 +137,26 @@ class Rectangle(Base):
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        """
+        Assigns arguments to attributes in the specified order.
+
+        Args:
+            *args: Arguments to assign to the attributes.
+                   1st arg: id
+                   2nd arg: width
+                   3rd arg: height
+                   4th arg: x
+                   5th arg: y
+        """
+        if len(args) >= 1:
+            self.id = args[0]
+        if len(args) >= 2:
+            self.width = args[1]
+        if len(args) >= 3:
+            self.height = args[2]
+        if len(args) >= 4:
+            self.x = args[3]
+        if len(args) >= 5:
+            self.y = args[4]
