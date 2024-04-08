@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Filename: 0-javascript_is_amazing.js
+/* Filename: 0-javascript_is_amazing.js */
 
 'use strict';
 
