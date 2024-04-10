@@ -3,7 +3,7 @@
 
 'use strict';
 
-function addMeMaybe(number, theFunction) {
+function addMeMaybe (number, theFunction) {
   theFunction(++number);
 }
 
