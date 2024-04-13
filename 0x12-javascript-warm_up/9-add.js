@@ -3,7 +3,7 @@
 
 'use strict';
 
-function add(a, b) {
+function add (a, b) {
   return parseInt(a) + parseInt(b);
 }
 
