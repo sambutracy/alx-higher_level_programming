@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module defines a python program that filters states based on a user input name
+"""This module defines a python program that filters
+states based on a user input name
 from the database hbtn_0e_0_usa.
 """
 
@@ -10,7 +11,7 @@ if __name__ == "__main__":
     """ Check if correct number of arguments is provided"""
     if len(sys.argv) != 5:
         print("Usage: {} <username> <password> <database> <state_name>"
-                .format(sys.argv[0]))
+              .format(sys.argv[0]))
         sys.exit(1)
 
     """Extract command-line arguments"""

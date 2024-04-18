@@ -15,7 +15,7 @@ if __name__ == '__main__':
     password = sys.argv[2]
     dbname = sys.argv[3]
     connect = MySQLdb.connect(host="localhost", user=username,
-            passwd=password, db=dbname)
+                              passwd=password, db=dbname)
     cursor = connect.cursor()
     cursor.execute('SELECT * FROM states ORDER BY id ASC')
     result = cursor.fetchall()

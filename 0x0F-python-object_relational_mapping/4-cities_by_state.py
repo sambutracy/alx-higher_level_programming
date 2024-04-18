@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     """Creating cursor for database interaction"""
     cursor = db.cursor()
-    
+
     """SQL query to select cities with corresponding state names"""
     query = """
         SELECT cities.id, cities.name, states.name
