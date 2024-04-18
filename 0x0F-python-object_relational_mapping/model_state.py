@@ -14,15 +14,14 @@ Base = declarative_base()
 
 class City(Base):
     """
-    Represents a city in the database.
+    Represents a state in the database.
 
     Attributes:
-        id (int): The unique identifier for the city.
-        name (str): The name of the city.
+        id (int): The unique identifier for the state.
+        name (str): The name of the state.
         state_id (int): The foreign key referencing the id of the state
     """
-    __tablename__ = "cities"
+    __tablename__ = "states"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
