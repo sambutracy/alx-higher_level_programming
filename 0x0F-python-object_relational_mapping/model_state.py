@@ -6,13 +6,14 @@ This script defines a SQLAlchemy model for the City class, which represents
 the cities table in the database. It has columns for id, name, and state_id
 """
 
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import create_engine
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
 
-class City(Base):
+class State(Base):
     """
     Represents a state in the database.
 
