@@ -12,5 +12,5 @@ if __name__ == "__main__":
     body_response = response.text
 
     print("Body response:")
-    print("    - type:", type(body_response))
-    print("    - content:", body_response)
+    print("\t- type:", type(body_response))
+    print("\t- content:", body_response)
